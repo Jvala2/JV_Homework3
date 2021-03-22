@@ -14,6 +14,8 @@ var pCase
 var pNumbers
 var pChar
 var mArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var finalP = []
+var output
 // Write password to the #password input
 function writePassword() {
   pLength = prompt("Enter password legth. (8-128 characters");
@@ -40,16 +42,18 @@ function writePassword() {
   
   for(var i=0;i<pLength;i=i+1) {
     var password = mArray[Math.floor(Math.random() * mArray.length)];
-    console.log(password)
+    finalP.push(password)
 
   }
   
-  
+  output = finalP.join("");
+  console.log(output);
+  alert(output);
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  // var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  // passwordText.value = password;
 
 }
 
@@ -58,50 +62,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-/*
-function generateRandomNumber(maxValue) {
-  var randomNumber=Math.random();
-   
-   var result=Math.floor(randomNumber * maxValue);
-   return result;
- }
-
-for(var i=0;i<pLength;i=i+1) {
-  generateRandomNumber();
-}
-
-
-
-//How to remove decimal places: Joe wrote this rememeber.
-var integerValue=Math.floor(1.5);
-//mathfloor removes decimal places.
-
-
-//random number generator
-var randomNumber=Math.random();
-
-var result=Math.floor(randomNumber);
-
-
-
-
-
-var numbers=["a","b","c","d","e"];
-console.log(getRandomElementFromArray(numbers));
-
-
-//Function to generate a random number between 0 and (maxValue-1)
-  function generateRandomNumber(pLength) {
-  var randomNumber=Math.random();
-
-  var result=Math.floor(randomNumber * maxValue);
-  return result;
-}
-
-
-//Function to return a random element from an array
-function getRandomElementFromArray(array) {
-  var randomPosition=generateRandomNumber(array.length);
-  return array[randomPosition];
-}
-*/
