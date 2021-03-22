@@ -50,15 +50,7 @@ function writePassword() {
   console.log(output);
   alert(output);
 
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-
-  // passwordText.value = password;
-
 }
-
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
